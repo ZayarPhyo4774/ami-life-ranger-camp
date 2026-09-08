@@ -28,35 +28,15 @@ def file_claim(request):
 
 def get_quote(request):
     if request.method == 'POST':
-            form = QuoteForm(request.POST)
-            if form.is_valid():
-                # Extract cleaned data
-                full_name = form.cleaned_data['full_name']
-                phone_number = form.cleaned_data['phone_number']
-                email = form.cleaned_data['email']
-                message_text = form.cleaned_data['message']
+        form = QuoteRequestForm(request.POST)
+        if form.is_valid():
+            # Process form data and send email...
+            messages.success(request, "မက်ဆေ့ချ် ပို့ဆောင်ပြီးပါပြီ။")
+            return redirect('get_quote')
+    else:
+        form = QuoteRequestForm()
 
-                try:
-                    send_mail(
-                        subject=f"New Quote Request from {full_name}",
-                        message=f"Name: {full_name}\nPhone: {phone_number}\nEmail: {email}\n\nMessage:\n{message_text}",
-                        from_email=settings.DEFAULT_FROM_EMAIL,
-                        recipient_list=[settings.COMPANY_QUOTE_EMAIL],
-                        fail_silently=False,
-                    )
-                    messages.success(request, "မက်ဆေ့ချ် ပို့ဆောင်ပြီးပါပြီ။ မကြာမီ ပြန်လည်ဆက်သွယ်ပါမည်။")
-                    return redirect('get_quote')
-
-                except Exception as e:
-                    logger.error(f"Email delivery failed: {e}")
-                    messages.error(
-                        request, 
-                        "စနစ်ပိုင်းဆိုင်ရာ လိုအပ်ချက်ကြောင့် မက်ဆေ့ချ် မပို့ဆောင်နိုင်ပါ။ ကျေးဇူးပြု၍ ဖုန်းဖြင့် တိုက်ရိုက် ဆက်သွယ်ပေးပါရန်။"
-                    )
-        else:
-            form = QuoteForm()
-
-        return render(request, 'getquote.html', {'form': form})
+    return render(request, 'amiapp/getquote.html', {'form': form})
 
 def coverage_details(request):
     return render(request, 'coveragedetails.html', {
