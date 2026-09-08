@@ -36,7 +36,7 @@ def get_quote(request):
     else:
         form = QuoteRequestForm()
 
-    return render(request, 'amiapp/getquote.html', {'form': form})
+    return render(request, 'getquote.html', {'form': form})
 
 def coverage_details(request):
     return render(request, 'coveragedetails.html', {
