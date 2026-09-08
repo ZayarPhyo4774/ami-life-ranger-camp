@@ -6,7 +6,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / '.env')
 SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key')
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1','amilife-rangercamp.vercel.app','amilifeassurance.com']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1','https://ami-life-ranger-camp.vercel.app/','amilifeassurance.com']
 
 CSRF_TRUSTED_ORIGINS = [
     'https://*.vercel.app',
