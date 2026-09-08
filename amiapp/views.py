@@ -31,8 +31,33 @@ def get_quote(request):
         form = QuoteRequestForm(request.POST)
         if form.is_valid():
             # Process form data and send email...
-            messages.success(request, "မက်ဆေ့ချ် ပို့ဆောင်ပြီးပါပြီ။")
-            return redirect('get_quote')
+            full_name = form.cleaned_data['full_name']
+            email = form.cleaned_data['email']
+            phone_number = form.cleaned_data['phone_number']
+            customer_message = form.cleaned_data['message'] or 'No message provided.'
+            subject = f'New quote request from {full_name}'
+            message = (
+                'A new quote request was submitted.\n\n'
+                f'Name: {full_name}\n'
+                f'Email: {email}\n'
+                f'Phone: {phone_number}\n\n'
+                f'Message:\n{customer_message}\n'
+            )
+
+            try:
+                send_mail(
+                    subject,
+                    message,
+                    settings.DEFAULT_FROM_EMAIL,
+                    [settings.COMPANY_QUOTE_EMAIL],
+                    fail_silently=False,
+                    # reply_to=[email],
+                )
+            except BadHeaderError:
+                messages.error(request, 'Invalid form submission. Please try again.')
+            else:
+                messages.success(request, 'Your quote request has been sent.')
+                return redirect('get_quote')
     else:
         form = QuoteRequestForm()
 
