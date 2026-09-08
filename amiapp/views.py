@@ -27,44 +27,36 @@ def file_claim(request):
     })  
 
 def get_quote(request):
-    if request.method == 'POST':
-        form = QuoteRequestForm(request.POST)
+if request.method == 'POST':
+        form = QuoteForm(request.POST)
         if form.is_valid():
+            # Extract cleaned data
             full_name = form.cleaned_data['full_name']
-            email = form.cleaned_data['email']
             phone_number = form.cleaned_data['phone_number']
-            customer_message = form.cleaned_data['message'] or 'No message provided.'
-            subject = f'New quote request from {full_name}'
-            message = (
-                'A new quote request was submitted.\n\n'
-                f'Name: {full_name}\n'
-                f'Email: {email}\n'
-                f'Phone: {phone_number}\n\n'
-                f'Message:\n{customer_message}\n'
-            )
+            email = form.cleaned_data['email']
+            message_text = form.cleaned_data['message']
 
             try:
                 send_mail(
-                    subject,
-                    message,
-                    settings.DEFAULT_FROM_EMAIL,
-                    [settings.COMPANY_QUOTE_EMAIL],
+                    subject=f"New Quote Request from {full_name}",
+                    message=f"Name: {full_name}\nPhone: {phone_number}\nEmail: {email}\n\nMessage:\n{message_text}",
+                    from_email=settings.DEFAULT_FROM_EMAIL,
+                    recipient_list=[settings.COMPANY_QUOTE_EMAIL],
                     fail_silently=False,
-                    # reply_to=[email],
                 )
-            except BadHeaderError:
-                messages.error(request, 'Invalid form submission. Please try again.')
-            else:
-                messages.success(request, 'Your quote request has been sent.')
+                messages.success(request, "မက်ဆေ့ချ် ပို့ဆောင်ပြီးပါပြီ။ မကြာမီ ပြန်လည်ဆက်သွယ်ပါမည်။")
                 return redirect('get_quote')
-    else:
-        form = QuoteRequestForm()
 
-    return render(request, 'getquote.html', {
-        'company': COMPANY_NAME,
-        'show_back_button': True,
-        'form': form,
-    })
+            except Exception as e:
+                logger.error(f"Email delivery failed: {e}")
+                messages.error(
+                    request, 
+                    "စနစ်ပိုင်းဆိုင်ရာ လိုအပ်ချက်ကြောင့် မက်ဆေ့ချ် မပို့ဆောင်နိုင်ပါ။ ကျေးဇူးပြု၍ ဖုန်းဖြင့် တိုက်ရိုက် ဆက်သွယ်ပေးပါရန်။"
+                )
+    else:
+        form = QuoteForm()
+
+    return render(request, 'getquote.html', {'form': form})
 
 def coverage_details(request):
     return render(request, 'coveragedetails.html', {
