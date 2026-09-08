@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Coverage Details | AMI Life Insurance
+{% endblock %}
+
+{% block content %}
+
+<section class="section section-sm">
+    <div class="container">
+
+        <!-- =========================================================
+             SECTION HEADER
+             ========================================================= -->
+        <div class="text-center mb-5">
+            <span class="hero-eyebrow text-dark">
+                INSURANCE INFORMATION
+            </span>
+
+            <h1 class="section-title">
+                Coverage Details
+            </h1>
+
+            <p class="section-subtitle">
+                Learn more about the protection and benefits covered during your visit to Ranger Camp Playground Playground.
+            </p>
+        </div>
+
+
+        <!-- =========================================================
+             COVERAGE DETAILS CARD
+             ========================================================= -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+
+                <div class="card btn-card">
+                    <div class="card-body p-4 p-md-5">
+
+                        <div class="text-center mb-4">
+                            <div class="trust-icon mx-auto mb-3">
+                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                            </div>
+
+                            <h2 class="card-title h3">
+                                Ranger Camp Playground ကစားကွင်းတွင် ရရှိသော အာမခံဆိုတာဘာလဲ။
+                            </h2>
+                        </div>
+
+                        <div class="card-text text-secondary lh-lg fs-6">
+                            {% include 'include/coverage_details_text.html' %}
+                        </div>
+
+                        <div class="text-center pt-4 mt-4 border-top">
+                            <a href="{% url 'know_insurance' %}" class="btn btn-secondary">
+                                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                                Back to Insurance Info
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,567 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    AMI Life Insurance | Ranger Camp Playground Playground
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================================
+     HERO CAROUSEL
+     ========================================================= -->
+
+<section
+    class="hero-carousel-section"
+    aria-label="AMI Life Assurance campaign highlights">
+
+
+    <div
+        id="amiLifeCarousel"
+        class="carousel slide carousel-fade premium-carousel"
+        data-bs-ride="carousel"
+        data-bs-interval="5000">
+
+
+        <!-- =================================================
+             INDICATORS
+             ================================================= -->
+
+        <div class="carousel-indicators">
+
+            <button
+                type="button"
+                data-bs-target="#amiLifeCarousel"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Campaign slide 1">
+            </button>
+
+            <button
+                type="button"
+                data-bs-target="#amiLifeCarousel"
+                data-bs-slide-to="1"
+                aria-label="Campaign slide 2">
+            </button>
+
+            <button
+                type="button"
+                data-bs-target="#amiLifeCarousel"
+                data-bs-slide-to="2"
+                aria-label="Campaign slide 3">
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             SLIDES
+             ================================================= -->
+
+        <div class="carousel-inner">
+
+
+            <!-- =================================================
+                 SLIDE 1
+                 ================================================= -->
+
+            <div class="carousel-item active">
+
+                <div class="hero-slide">
+
+
+                    <img
+                        src="{% static 'images/banner-1.png' %}"
+                        class="hero-slide-image"
+                        alt="AMI Life Assurance and Ranger Camp Playground Playground partnership">
+                    
+
+
+                    <div
+                        class="hero-slide-overlay"
+                        aria-hidden="true">
+                    </div>
+
+
+                    <div class="hero-slide-content">
+
+                        <div class="container">
+
+                            <div class="hero-slide-text">
+
+                                <span class="hero-eyebrow">
+                                    AMI LIFE × Ranger Camp Playground PLAYGROUND
+                                </span>
+
+
+                                <h1 class="hero-slide-title">
+
+                                    ပျော်ရွှင်မှုတိုင်းမှာ
+                                    <span>လုံခြုံမှုရှိစေရန်</span>
+
+                                </h1>
+
+
+                                <p class="hero-slide-description">
+
+                                    ပျော်ရွှင်မှုတိုင်းမှာ လုံခြုံစိတ်ချရမှုပါ
+                                    ရှိနေစေရန် AMI Life နှင့် Ranger Camp Playground
+                                    Playground တို့၏ ပူးပေါင်းဆောင်ရွက်မှု။
+
+                                </p>
+
+
+                                <a
+                                    href="#campaign-options"
+                                    class="hero-slide-button">
+
+                                    Explore Your Benefits
+
+                                    <i
+                                        class="fa-solid fa-arrow-right"
+                                        aria-hidden="true">
+                                    </i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SLIDE 2
+                 ================================================= -->
+
+            <div class="carousel-item">
+
+                <div class="hero-slide">
+
+
+                    <img
+                        src="{% static 'images/banner-2.jpeg' %}"
+                        class="hero-slide-image"
+                        alt="AMI Life insurance protection benefits">
+
+
+                    <div
+                        class="hero-slide-overlay"
+                        aria-hidden="true">
+                    </div>
+
+
+                    <div class="hero-slide-content">
+
+                        <div class="container">
+
+                            <div class="hero-slide-text">
+
+                                <span class="hero-eyebrow">
+                                    LIFE PROTECTION
+                                </span>
+
+
+                                <h2 class="hero-slide-title">
+
+                                    Protect What
+                                    <span>Matters Most</span>
+
+                                </h2>
+
+
+                                <p class="hero-slide-description">
+
+                                    Discover the life insurance protection
+                                    and benefits available through the
+                                    Ranger Camp Playground Playground campaign.
+
+                                </p>
+
+
+                                <a
+                                    href="{% url 'know_insurance' %}"
+                                    class="hero-slide-button">
+
+                                    Learn About Insurance
+
+                                    <i
+                                        class="fa-solid fa-arrow-right"
+                                        aria-hidden="true">
+                                    </i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SLIDE 3
+                 ================================================= -->
+
+            <div class="carousel-item">
+
+                <div class="hero-slide">
+
+
+                    <img
+                        src="{% static 'images/banner-3.jpeg' %}"
+                        class="hero-slide-image"
+                        alt="AMI Life customer support and insurance consultation">
+
+
+                    <div
+                        class="hero-slide-overlay"
+                        aria-hidden="true">
+                    </div>
+
+
+                    <div class="hero-slide-content">
+
+                        <div class="container">
+
+                            <div class="hero-slide-text">
+
+                                <span class="hero-eyebrow">
+                                    AMI LIFE ASSURANCE
+                                </span>
+
+
+                                <h2 class="hero-slide-title">
+
+                                    For Better
+                                    <span>Tomorrows</span>
+
+                                </h2>
+
+
+                                <p class="hero-slide-description">
+
+                                    "For better tomorrows, together with
+                                    you today."
+
+                                </p>
+
+
+                                <a
+                                    href="{% url 'get_quote' %}"
+                                    class="hero-slide-button">
+
+                                    Talk to AMI Life
+
+                                    <i
+                                        class="fa-solid fa-arrow-right"
+                                        aria-hidden="true">
+                                    </i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PREVIOUS
+             ================================================= -->
+
+        <button
+            class="carousel-control-prev premium-carousel-control"
+            type="button"
+            data-bs-target="#amiLifeCarousel"
+            data-bs-slide="prev"
+            aria-label="Previous campaign">
+
+            <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true">
+            </span>
+
+        </button>
+
+
+        <!-- =================================================
+             NEXT
+             ================================================= -->
+
+        <button
+            class="carousel-control-next premium-carousel-control"
+            type="button"
+            data-bs-target="#amiLifeCarousel"
+            data-bs-slide="next"
+            aria-label="Next campaign">
+
+            <span
+                class="carousel-control-next-icon"
+                aria-hidden="true">
+            </span>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CAMPAIGN INTRODUCTION
+     ========================================================= -->
+
+<section
+    class="section"
+    id="campaign-options">
+
+
+    <div class="container">
+
+
+        <!-- Section Heading -->
+
+        <div class="text-center mb-5">
+
+            <span class="hero-eyebrow text-dark">
+                YOUR AMI LIFE JOURNEY
+            </span>
+
+
+            <h2 class="section-title">
+
+                Everything You Need,
+                <br class="d-md-none">
+
+                All in One Place
+
+            </h2>
+
+
+            <p class="section-subtitle">
+
+                Learn about your protection, understand the claims process,
+                or speak directly with AMI Life Assurance.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACTION CARDS
+             ================================================= -->
+
+        <div class="row g-4">
+
+
+            <!-- =================================================
+                 CARD 1 — INSURANCE
+                 ================================================= -->
+
+            <div class="col-12 col-md-4">
+
+                <a
+                    href="{% url 'know_insurance' %}"
+                    class="card btn-card text-decoration-none h-100">
+
+                    <div class="card-body p-4 p-lg-5 text-center">
+
+
+                        <div
+                            class="trust-icon mx-auto mb-4">
+
+                            <i
+                                class="fa-solid fa-file-contract"
+                                aria-hidden="true">
+                            </i>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+
+                            အသက်အာမခံအကြောင်း
+                            သိရှိလိုပါက
+
+                        </h3>
+
+
+                        <p class="card-text">
+
+                            အာမခံအကာအကွယ်၊ အကျိုးခံစားခွင့်များနှင့်
+                            ပတ်သက်၍ အသေးစိတ်လေ့လာနိုင်ပါသည်။
+
+                        </p>
+
+
+                        <span
+                            class="d-inline-flex align-items-center gap-2 mt-3 fw-semibold"
+                            style="color: var(--gold);">
+
+                            Learn More
+
+                            <i
+                                class="fa-solid fa-arrow-right"
+                                aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 2 — CLAIM
+                 ================================================= -->
+
+            <div class="col-12 col-md-4">
+
+                <a
+                    href="{% url 'file_claim' %}"
+                    class="card btn-card text-decoration-none h-100">
+
+                    <div class="card-body p-4 p-lg-5 text-center">
+
+
+                        <div
+                            class="trust-icon mx-auto mb-4">
+
+                            <i
+                                class="fa-solid fa-file-signature"
+                                aria-hidden="true">
+                            </i>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+
+                            အာမခံလျော်ကြေးနှင့်
+                            ပတ်သက်၍ သိရှိလိုပါက
+
+                        </h3>
+
+
+                        <p class="card-text">
+
+                            လျော်ကြေးတောင်းခံမှုဆိုင်ရာ အသေးစိတ်
+                            အချက်အလက်များကို လေ့လာနိုင်ပြီး
+                            ဤနေရာမှ တစ်ခါတည်း တောင်းခံနိုင်ပါသည်။
+
+                        </p>
+
+
+                        <span
+                            class="d-inline-flex align-items-center gap-2 mt-3 fw-semibold"
+                            style="color: var(--gold);">
+
+                            File a Claim
+
+                            <i
+                                class="fa-solid fa-arrow-right"
+                                aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CARD 3 — CONTACT
+                 ================================================= -->
+
+            <div class="col-12 col-md-4">
+
+                <a
+                    href="{% url 'get_quote' %}"
+                    class="card btn-card text-decoration-none h-100">
+
+                    <div class="card-body p-4 p-lg-5 text-center">
+
+
+                        <div
+                            class="trust-icon mx-auto mb-4">
+
+                            <i
+                                class="fa-solid fa-phone"
+                                aria-hidden="true">
+                            </i>
+
+                        </div>
+
+
+                        <h3 class="card-title">
+
+                            အသက်အာမခံနှင့် ပတ်သက်၍
+                            မေးမြန်းစုံစမ်းလိုပါက
+
+                        </h3>
+
+
+                        <p class="card-text">
+
+                            လူကြီးမင်း၏ နာမည်နှင့် ဖုန်းနံပါတ်ကို
+                            ချန်ထားပေးခဲ့ပါက AMI Life မှ
+                            ဆက်သွယ်ကူညီဆောင်ရွက်ပေးပါမည်။
+
+                        </p>
+
+
+                        <span
+                            class="d-inline-flex align-items-center gap-2 mt-3 fw-semibold"
+                            style="color: var(--gold);">
+
+                            Contact AMI Life
+
+                            <i
+                                class="fa-solid fa-arrow-right"
+                                aria-hidden="true">
+                            </i>
+
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

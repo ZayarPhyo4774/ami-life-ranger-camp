@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Know Your Insurance | AMI Life Insurance
+{% endblock %}
+
+{% block content %}
+
+<section class="section section-sm">
+    <div class="container">
+
+        <!-- =========================================================
+             SECTION HEADER
+             ========================================================= -->
+        <div class="text-center mb-5">
+            <span class="hero-eyebrow text-dark">
+                INSURANCE INFORMATION
+            </span>
+
+            <h1 class="section-title">
+                Know Your Insurance
+            </h1>
+
+            <p class="section-subtitle">
+                Explore the terms, coverage details, and protective benefits of your AMI Life policy.
+            </p>
+        </div>
+
+
+        <!-- =========================================================
+             NAVIGATION CARDS GRID
+             ========================================================= -->
+        <div class="row g-4 justify-content-center">
+
+            <!-- Card 1: What is Coverage -->
+            <div class="col-12 col-md-4">
+                <a href="{% url 'coverage_details' %}" 
+                   class="card btn-card text-decoration-none h-100">
+                    <div class="card-body p-4 p-lg-5 text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="trust-icon mx-auto mb-4">
+                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                            </div>
+
+                            <h2 class="card-title h5 mb-3">
+                                Ranger Camp Playground ကစားကွင်းတွင် ရရှိသော အာမခံဆိုတာဘာလဲ။
+                            </h2>
+
+                            <p class="card-text">
+                                ကစားကွင်းအတွင်း ရရှိနိုင်သော အာမခံ အကာအကွယ်ဆိုင်ရာ အသေးစိတ် အချက်အလက်များ။
+                            </p>
+                        </div>
+
+                        <span class="d-inline-flex align-items-center justify-content-center gap-2 mt-4 fw-semibold" 
+                              style="color: var(--gold);">
+                            Read Details
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 2: Coverage & Benefits -->
+            <div class="col-12 col-md-4">
+                <a href="{% url 'policydocs' %}" 
+                   class="card btn-card text-decoration-none h-100">
+                    <div class="card-body p-4 p-lg-5 text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="trust-icon mx-auto mb-4">
+                                <i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
+                            </div>
+
+                            <h2 class="card-title h5 mb-3">
+                                အာမခံအကာအကွယ်နှင့် အကျိုးခံစားခွင့်များက ဘာလဲ။
+                            </h2>
+
+                            <p class="card-text">
+                                ရရှိနိုင်မည့် အာမခံ ခံစားခွင့်များနှင့် ပေါ်လစီ စည်းမျဉ်း စည်းကမ်းများ။
+                            </p>
+                        </div>
+
+                        <span class="d-inline-flex align-items-center justify-content-center gap-2 mt-4 fw-semibold" 
+                              style="color: var(--gold);">
+                            View Benefits
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 3: Our Commitment -->
+            <div class="col-12 col-md-4">
+                <a href="{% url 'our_commitment' %}" 
+                   class="card btn-card text-decoration-none h-100">
+                    <div class="card-body p-4 p-lg-5 text-center d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="trust-icon mx-auto mb-4">
+                                <i class="fa-solid fa-handshake-angle" aria-hidden="true"></i>
+                            </div>
+
+                            <h2 class="card-title h5 mb-3">
+                                ကျွန်ုပ်တို့၏ ကတိ
+                            </h2>
+
+                            <p class="card-text">
+                                လူကြီးမင်းနှင့် မိသားစုအတွက် AMI Life ၏ ရပ်တည်ချက်နှင့် ဝန်ဆောင်မှု ကတိကဝတ်များ။
+                            </p>
+                        </div>
+
+                        <span class="d-inline-flex align-items-center justify-content-center gap-2 mt-4 fw-semibold" 
+                              style="color: var(--gold);">
+                            Learn Our Promise
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

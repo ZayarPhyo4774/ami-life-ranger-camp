@@ -1,0 +1,1580 @@
+
+/* =========================================================
+   AMI LIFE ASSURANCE
+   Premium Campaign / Voucher Website
+   Global Styles
+   ========================================================= */
+
+
+/* =========================================================
+   1. DESIGN TOKENS
+   ========================================================= */
+
+:root {
+    /* Brand */
+    --primary: #474a4c;
+    --primary-dark: #292c2e;
+    --primary-deep: #1f2224;
+    --soft: #898a8d;
+
+    /* Accent */
+    --gold: #b99a5b;
+    --gold-light: #d8c28d;
+
+    /* Surfaces */
+    --surface: #ffffff;
+    --surface-soft: #f5f6f6;
+    --surface-muted: #eef0f1;
+
+    /* Typography */
+    --text: #202224;
+    --text-secondary: #45484a;
+    --text-muted: #6c7073;
+    --text-light: #898d90;
+
+    /* Borders */
+    --border: #e3e5e6;
+    --border-dark: #cfd2d4;
+
+    /* Status */
+    --success: #28745a;
+    --danger: #b54141;
+    --warning: #9a6b19;
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 30px;
+    --radius-pill: 999px;
+
+    /* Shadows */
+    --shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.06);
+    --shadow-card: 0 14px 40px rgba(0, 0, 0, 0.08);
+    --shadow-premium: 0 24px 70px rgba(0, 0, 0, 0.11);
+
+    /* Typography */
+    --font-body: "Inter", Arial, sans-serif;
+    --font-display: "Playfair Display", Georgia, serif;
+
+    /* Layout */
+    --container-max: 1200px;
+    --navbar-height: 100px;
+
+    /* Motion */
+    --transition-fast: 0.18s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.4s ease;
+}
+
+
+/* =========================================================
+   2. RESET / GLOBAL
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbfcfc 0%,
+            #ffffff 55%,
+            #ffffff 100%
+        );
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Prevent horizontal overflow */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Images */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Links */
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
+
+/* Buttons */
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================================================
+   3. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+
+    color: var(--primary-dark);
+
+    font-family: var(--font-body);
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+h1,
+h2 {
+    letter-spacing: -0.025em;
+}
+
+
+.hero-title,
+.display-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+
+.section-title {
+    margin-bottom: 12px;
+
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 600;
+
+    color: var(--primary-dark);
+}
+
+
+.section-subtitle {
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+
+.company-name {
+    color: var(--primary-dark);
+    font-weight: 700;
+}
+
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+
+/* =========================================================
+   4. PREMIUM NAVBAR
+   ========================================================= */
+
+.premium-navbar {
+    min-height: var(--navbar-height);
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.035);
+
+    z-index: 1030;
+}
+
+
+/* Bootstrap navbar container */
+
+.premium-navbar .container {
+    position: relative;
+
+    min-height: var(--navbar-height);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   5. LARGE LOGO
+   ========================================================= */
+
+.premium-brand {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+
+    padding: 0;
+
+    text-decoration: none;
+
+    z-index: 2;
+}
+
+
+.navbar-logo {
+    display: block;
+
+    /*
+       Increased from 64px.
+       This is intentionally large for the AMI Life logo.
+    */
+
+    height: 100px;
+
+    width: auto;
+
+    max-width: 260px;
+
+    object-fit: contain;
+
+    transition:
+        transform var(--transition-normal),
+        opacity var(--transition-normal);
+}
+
+
+.premium-brand:hover .navbar-logo {
+    opacity: 0.92;
+}
+
+
+/* =========================================================
+   6. NAVBAR LEFT / RIGHT
+   ========================================================= */
+
+.nav-left,
+.nav-right {
+    width: 180px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    z-index: 3;
+}
+
+
+.nav-left {
+    justify-content: flex-start;
+}
+
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   7. BACK BUTTON
+   ========================================================= */
+
+.back-button {
+    min-width: 44px;
+    min-height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 9px 15px;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.back-button:hover {
+    background: var(--surface-soft);
+
+    border-color: var(--border-dark);
+
+    color: var(--primary-dark);
+
+    transform: translateX(-2px);
+}
+
+
+.back-button:active {
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   8. WEBSITE LINK
+   ========================================================= */
+
+.nav-website-link {
+    min-height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 8px 2px;
+
+    color: var(--primary);
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+
+.nav-website-link:hover {
+    color: var(--gold);
+
+    transform: translateY(-1px);
+}
+
+
+.nav-website-link i {
+    font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   9. MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+    flex: 1;
+
+    min-height: 60vh;
+
+    /*
+       Gives enough space below the fixed navbar.
+    */
+
+    padding-top: 120px;
+    padding-bottom: 70px;
+}
+
+
+/* Generic section spacing */
+
+.section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+.section-sm {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/* =========================================================
+   10. PREMIUM BUTTONS
+   ========================================================= */
+
+.btn-primary {
+    min-height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 25px;
+
+    background: var(--primary);
+
+    border: 1px solid var(--primary);
+    border-radius: var(--radius-pill);
+
+    color: #ffffff;
+
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow: none;
+
+    transition:
+        background var(--transition-normal),
+        border-color var(--transition-normal),
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal);
+}
+
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+
+    border-color: var(--primary-dark);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+.btn-primary:active {
+    background: var(--primary-deep) !important;
+
+    border-color: var(--primary-deep) !important;
+
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* Secondary */
+
+.btn-secondary {
+    min-height: 46px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-pill);
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background var(--transition-normal),
+        border-color var(--transition-normal),
+        color var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+
+.btn-secondary:hover {
+    background: var(--surface-soft);
+
+    border-color: var(--primary);
+
+    color: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   11. CAMPAIGN / VOUCHER CARDS
+   ========================================================= */
+
+.btn-card {
+    position: relative;
+
+    width: 100%;
+
+    border-radius: var(--radius-lg);
+
+    background: var(--surface) !important;
+
+    border: 1px solid var(--border);
+
+    box-shadow: var(--shadow-soft);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition-normal),
+        box-shadow var(--transition-normal),
+        border-color var(--transition-normal);
+}
+
+
+.btn-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #c9ccce;
+
+    box-shadow: var(--shadow-premium);
+}
+
+
+.btn-card:active {
+    transform: translateY(-1px);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* Card title */
+
+.card-title {
+    margin-bottom: 8px;
+
+    color: var(--primary-dark);
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    line-height: 1.35;
+}
+
+
+/* Card text */
+
+.card-text {
+    color: var(--text-muted);
+
+    line-height: 1.65;
+}
+
+
+/* Card icon */
+
+.btn-card i {
+    transition:
+        transform var(--transition-normal),
+        color var(--transition-normal);
+}
+
+
+.btn-card:hover i {
+    transform: translateY(-3px);
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   12. VOUCHER VISUAL
+   ========================================================= */
+
+.voucher-card {
+    position: relative;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-card);
+
+    overflow: hidden;
+}
+
+
+.voucher-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--gold),
+            var(--primary)
+        );
+}
+
+
+.voucher-card-header {
+    padding: 30px 30px 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.voucher-card-body {
+    padding: 30px;
+}
+
+
+.voucher-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 10px 20px;
+
+    background: var(--surface-soft);
+
+    border: 1px dashed var(--border-dark);
+
+    border-radius: var(--radius-md);
+
+    color: var(--primary-dark);
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   13. HERO
+   ========================================================= */
+
+.hero-section {
+    position: relative;
+
+    padding-top: 70px;
+    padding-bottom: 90px;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.hero-title {
+    max-width: 850px;
+
+    margin-bottom: 20px;
+
+    color: var(--primary-dark);
+
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+
+    line-height: 1.05;
+}
+
+
+.hero-description {
+    max-width: 680px;
+
+    margin-bottom: 30px;
+
+    color: var(--text-muted);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+.hero-image {
+    width: 100%;
+
+    border-radius: var(--radius-xl);
+
+    box-shadow: var(--shadow-premium);
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   14. TRUST / BENEFIT ITEMS
+   ========================================================= */
+
+.trust-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+
+.trust-icon {
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--surface-soft);
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    color: var(--gold);
+
+    font-size: 0.95rem;
+}
+
+
+.trust-title {
+    margin-bottom: 3px;
+
+    color: var(--primary-dark);
+
+    font-weight: 600;
+}
+
+
+.trust-text {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   15. FORM ELEMENTS
+   ========================================================= */
+
+.form-label {
+    margin-bottom: 7px;
+
+    color: var(--primary-dark);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+.form-control,
+.form-select {
+    min-height: 48px;
+
+    padding: 11px 14px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-dark);
+
+    border-radius: var(--radius-md);
+
+    color: var(--text);
+
+    box-shadow: none;
+
+    transition:
+        border-color var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+
+.form-control::placeholder {
+    color: #a0a3a5;
+}
+
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(71, 74, 76, 0.12);
+}
+
+
+/* =========================================================
+   16. ALERTS
+   ========================================================= */
+
+.alert {
+    border-radius: var(--radius-md);
+
+    border-width: 1px;
+
+    font-size: 0.92rem;
+}
+
+
+.alert-success {
+    color: var(--success);
+
+    background: rgba(40, 116, 90, 0.07);
+
+    border-color: rgba(40, 116, 90, 0.18);
+}
+
+
+.alert-danger {
+    color: var(--danger);
+
+    background: rgba(181, 65, 65, 0.07);
+
+    border-color: rgba(181, 65, 65, 0.18);
+}
+
+
+/* =========================================================
+   17. PREMIUM FOOTER
+   ========================================================= */
+
+.premium-footer {
+    margin-top: auto;
+
+    padding: 65px 0 25px;
+
+    background: var(--primary-dark);
+
+    color: #ffffff;
+}
+
+
+.footer-brand {
+    max-width: 500px;
+}
+
+
+.footer-logo {
+    display: block;
+
+    height: 58px;
+
+    width: auto;
+
+    margin-bottom: 18px;
+}
+
+
+.footer-description {
+    max-width: 440px;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.64);
+
+    font-size: 0.9rem;
+
+    line-height: 1.75;
+}
+
+
+.footer-right {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+}
+
+
+.footer-label {
+    margin-bottom: 16px;
+
+    color: rgba(255, 255, 255, 0.52);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+
+/* =========================================================
+   18. SOCIAL LINKS
+   ========================================================= */
+
+.social-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.social-links a {
+    width: 44px;
+    height: 44px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transition:
+        background var(--transition-normal),
+        border-color var(--transition-normal),
+        color var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.06);
+
+    border-color: var(--gold);
+
+    color: var(--gold);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   19. FOOTER DIVIDER
+   ========================================================= */
+
+.footer-divider {
+    height: 1px;
+
+    margin: 42px 0 22px;
+
+    background: rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================================
+   20. FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    color: rgba(255, 255, 255, 0.48);
+
+    font-size: 0.78rem;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+.footer-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 24px;
+}
+
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.62);
+
+    text-decoration: none;
+
+    transition: color var(--transition-fast);
+}
+
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   21. SKIP LINK
+   ========================================================= */
+
+.skip-link {
+    position: fixed;
+
+    top: -100px;
+    left: 20px;
+
+    z-index: 9999;
+
+    padding: 12px 20px;
+
+    background: var(--primary-dark);
+
+    color: #ffffff;
+
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: top var(--transition-fast);
+}
+
+
+.skip-link:focus {
+    top: 0;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   22. ACCESSIBILITY FOCUS
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #005fcc;
+
+    outline-offset: 3px;
+}
+
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+/* =========================================================
+   23. TOUCH TARGETS
+   ========================================================= */
+
+button,
+.btn,
+.back-button,
+.social-links a,
+.nav-website-link {
+    touch-action: manipulation;
+}
+
+
+/* =========================================================
+   24. SELECTION
+   ========================================================= */
+
+::selection {
+    background: rgba(71, 74, 76, 0.16);
+
+    color: var(--primary-dark);
+}
+
+
+/* =========================================================
+   25. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #f3f4f4;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #b4b7b9;
+
+    border-radius: 999px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--soft);
+}
+
+
+/* =========================================================
+   26. MOBILE — TABLET (max-width: 991px)
+   ========================================================= */
+
+   @media (max-width: 991px) {
+
+    .premium-navbar {
+        --navbar-height: 88px;
+        min-height: 88px;
+        /* Handle iOS notch spacing */
+        padding-top: env(safe-area-inset-top, 0);
+    }
+
+    .premium-navbar .container {
+        min-height: 88px;
+    }
+
+    .navbar-logo {
+        height: 70px;
+    }
+
+    .nav-left,
+    .nav-right {
+        width: 150px;
+    }
+
+    .main-content {
+        padding-top: calc(108px + env(safe-area-inset-top, 0));
+    }
+
+    .hero-section {
+        padding-top: 55px;
+        padding-bottom: 70px;
+    }
+
+    .footer-right {
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   27. MOBILE (max-width: 767px)
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    html {
+        scroll-padding-top: 86px;
+    }
+
+    .premium-navbar {
+        --navbar-height: 76px;
+        min-height: 76px;
+    }
+
+    .premium-navbar .container {
+        min-height: 76px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .navbar-logo {
+        height: 58px;
+        max-width: 180px;
+    }
+
+    .nav-left,
+    .nav-right {
+        width: auto;
+        flex: 0 0 auto;
+    }
+
+    /* Icon-only button touch target adjustments */
+    .back-button,
+    .nav-website-link {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .back-button span,
+    .nav-website-link span {
+        display: none;
+    }
+
+    .nav-website-link i {
+        font-size: 1rem;
+    }
+
+    .main-content {
+        padding-top: calc(92px + env(safe-area-inset-top, 0));
+        padding-bottom: 50px;
+    }
+
+    .section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .section-sm {
+        padding-top: 36px;
+        padding-bottom: 36px;
+    }
+
+    .hero-section {
+        padding-top: 36px;
+        padding-bottom: 50px;
+    }
+
+    .hero-title {
+        font-size: clamp(1.85rem, 8vw, 2.8rem);
+        line-height: 1.12;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .voucher-card-header,
+    .voucher-card-body {
+        padding: 20px;
+    }
+
+    .premium-footer {
+        padding: 44px 0 24px;
+    }
+
+    .footer-logo {
+        height: 48px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+}
+
+
+/* =========================================================
+   28. SMALL MOBILE (max-width: 480px)
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .premium-navbar .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .navbar-logo {
+        height: 52px;
+        max-width: 150px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: clamp(1.65rem, 7vw, 2.1rem);
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .footer-description {
+        font-size: 0.84rem;
+    }
+}
+
+/* =========================================================
+   29. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* =========================================================
+   30. HIGH CONTRAST / FORCED COLORS
+   ========================================================= */
+
+@media (forced-colors: active) {
+
+    .btn-card,
+    .voucher-card,
+    .form-control,
+    .form-select,
+    .back-button,
+    .social-links a {
+        border: 1px solid ButtonText;
+    }
+
+
+    .btn-primary {
+        border: 1px solid ButtonText;
+
+        background: ButtonFace;
+
+        color: ButtonText;
+    }
+
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+        outline: 3px solid Highlight;
+    }
+}
+
+/* =========================================================
+   NAVBAR SCROLL STATE
+   ========================================================= */
+
+.premium-navbar.navbar-scrolled {
+    min-height: 82px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.premium-navbar.navbar-scrolled .navbar-logo {
+    height: 66px;
+}
+
+@media (max-width: 767px) {
+    .premium-navbar.navbar-scrolled {
+        min-height: 70px;
+    }
+
+    .premium-navbar.navbar-scrolled .navbar-logo {
+        height: 54px;
+    }
+}
+/* =========================================================
+   31. HERO CAROUSEL STYLES
+   ========================================================= */
+
+   .hero-carousel-section {
+    position: relative;
+    margin-top: calc(-1 * (var(--navbar-height) + 20px));
+    overflow: hidden;
+}
+
+.premium-carousel .carousel-item {
+    min-height: 580px;
+}
+
+.hero-slide {
+    position: relative;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    background: var(--primary-dark);
+}
+
+.hero-slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(31, 34, 36, 0.88) 0%,
+        rgba(31, 34, 36, 0.65) 50%,
+        rgba(31, 34, 36, 0.3) 100%
+    );
+    z-index: 2;
+}
+
+.hero-slide-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 100px 0 60px;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+}
+
+.hero-slide-title {
+    color: #ffffff;
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 600;
+    margin-bottom: 16px;
+    line-height: 1.15;
+}
+
+.hero-slide-title span {
+    color: var(--gold-light);
+}
+
+.hero-slide-description {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    max-width: 580px;
+    margin-bottom: 28px;
+}
+
+.hero-slide-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: var(--gold);
+    color: #ffffff;
+    border-radius: var(--radius-pill);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background var(--transition-normal), transform var(--transition-normal);
+}
+
+.hero-slide-button:hover {
+    background: var(--gold-light);
+    color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Custom Controls */
+.premium-carousel-control {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    margin: 0 20px;
+    opacity: 0.8;
+    transition: opacity var(--transition-fast), background var(--transition-fast);
+}
+
+.premium-carousel-control:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 767px) {
+    .premium-carousel .carousel-item,
+    .hero-slide {
+        min-height: 480px;
+    }
+    
+    .hero-slide-content {
+        padding: 80px 0 40px;
+    }
+
+    .premium-carousel-control {
+        display: none;
+    }
+}

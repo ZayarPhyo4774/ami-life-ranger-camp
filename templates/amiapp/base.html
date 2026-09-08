@@ -1,0 +1,382 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <meta name="theme-color"
+          content="#292c2e">
+
+    <meta name="description"
+          content="{% block meta_description %}AMI Life Assurance — protecting lives and securing futures.{% endblock %}">
+
+    <title>
+        {% block title %}
+            AMI Life Insurance
+        {% endblock %}
+    </title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+         ===================================================== -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- =====================================================
+         PREMIUM FONTS
+         ===================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =====================================================
+         FAVICON
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="{% static 'images/favicon.png' %}">
+
+
+    <!-- =====================================================
+         GLOBAL CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/style.css' %}">
+
+
+    {% block extra_css %}
+    {% endblock %}
+
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+
+
+<!-- =========================================================
+     SKIP LINK
+     ========================================================= -->
+
+<a href="#main-content"
+   class="skip-link">
+    Skip to main content
+</a>
+
+
+<!-- =========================================================
+     PREMIUM NAVBAR
+     ========================================================= -->
+
+<header>
+
+    <nav
+        class="navbar premium-navbar fixed-top"
+        aria-label="Primary navigation">
+
+        <div class="container">
+
+            <!-- =================================================
+                 LEFT
+                 ================================================= -->
+
+            <div class="nav-left">
+
+                {% if show_back_button %}
+
+                    <button
+                        type="button"
+                        class="back-button"
+                        onclick="window.history.back();"
+                        aria-label="Go back to previous page">
+
+                        <i
+                            class="fa-solid fa-arrow-left"
+                            aria-hidden="true">
+                        </i>
+
+                        <span>
+                            Back
+                        </span>
+
+                    </button>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- =================================================
+                 CENTER LOGO
+                 ================================================= -->
+
+            <a
+                class="premium-brand"
+                href="{% url 'home' %}"
+                aria-label="AMI Life Assurance home">
+
+                <img
+                    src="{% static 'images/logo.png' %}"
+                    alt="AMI Life Assurance"
+                    class="navbar-logo">
+
+            </a>
+
+
+            <!-- =================================================
+                 RIGHT
+                 ================================================= -->
+
+                 <div class="nav-right">
+                  {% block nav_action %}
+                      <a href="https://www.amilifeassurance.com"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                         class="nav-website-link"
+                         aria-label="Visit AMI Life Assurance website">
+                          <span>Visit AMI Life</span>
+                          <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                      </a>
+                  {% endblock %}
+                </div>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
+
+<main
+    id="main-content"
+    class="main-content flex-grow-1">
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<!-- =========================================================
+     PREMIUM FOOTER
+     ========================================================= -->
+
+<footer
+    class="premium-footer"
+    aria-label="Site footer">
+
+    <div class="container">
+
+        <div class="row align-items-center gy-4">
+
+
+            <!-- =================================================
+                 BRAND
+                 ================================================= -->
+
+            <div class="col-lg-6">
+
+                <div class="footer-brand">
+
+                    <a
+                        href="{% url 'home' %}"
+                        aria-label="AMI Life Assurance home">
+
+                        <img
+                            src="{% static 'images/logo.png' %}"
+                            alt="AMI Life Assurance"
+                            class="footer-logo">
+
+                    </a>
+
+
+                    <p class="footer-description">
+
+                        Protecting lives, securing futures, and helping
+                        families plan with confidence.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SOCIAL
+                 ================================================= -->
+
+            <div class="col-lg-6">
+
+                <div class="footer-right">
+
+                    <p class="footer-label">
+                        CONNECT WITH US
+                    </p>
+
+
+                    <div
+                        class="social-links"
+                        role="list"
+                        aria-label="Social media links">
+
+
+                        <!-- Facebook -->
+
+                        <a
+                            href="https://www.facebook.com/share/18T1zRaa4k/?mibextid=wwXIfr"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Facebook"
+                            role="listitem">
+
+                            <i
+                                class="fab fa-facebook-f"
+                                aria-hidden="true">
+                            </i>
+
+                        </a>
+
+
+                        <!-- LinkedIn -->
+
+                        <a
+                            href="https://www.linkedin.com/company/ayamyanmarlifeassurance/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            role="listitem">
+
+                            <i
+                                class="fab fa-linkedin-in"
+                                aria-hidden="true">
+                            </i>
+
+                        </a>
+
+
+                        <!-- Website -->
+
+                        <a
+                            href="https://www.amilifeassurance.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="AMI Life Assurance website"
+                            role="listitem">
+
+                            <i
+                                class="fa-solid fa-globe"
+                                aria-hidden="true">
+                            </i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             DIVIDER
+             ===================================================== -->
+
+        <div class="footer-divider"></div>
+
+
+        <!-- =====================================================
+             FOOTER BOTTOM
+             ===================================================== -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 AMI Life Assurance.
+                All rights reserved by AYA Myanmar Life Assurance
+                Company Limited.
+            </p>
+
+
+            <nav
+                class="footer-links"
+                aria-label="Legal navigation">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms &amp; Conditions
+                </a>
+
+            </nav>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     BOOTSTRAP JS
+     ========================================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- =========================================================
+     GLOBAL JS
+     ========================================================= -->
+
+<script src="{% static 'js/main.js' %}"></script>
+
+
+{% block extra_js %}
+{% endblock %}
+
+
+</body>
+
+</html>

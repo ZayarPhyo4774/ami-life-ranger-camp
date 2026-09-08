@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    How to Claim | AMI Life Insurance
+{% endblock %}
+
+{% block content %}
+
+<section class="section section-sm">
+    <div class="container">
+
+        <!-- =========================================================
+             SECTION HEADER
+             ========================================================= -->
+        <div class="text-center mb-5">
+            <span class="hero-eyebrow text-dark">
+                CLAIMS ASSISTANCE
+            </span>
+
+            <h1 class="section-title">
+                How to Claim
+            </h1>
+
+            <p class="section-subtitle">
+                Follow our step-by-step guidance to submit and track your insurance claims seamlessly.
+            </p>
+        </div>
+
+
+        <!-- =========================================================
+             CLAIMS CONTAINER
+             ========================================================= -->
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+
+                <div class="card btn-card mb-4">
+                    <div class="card-body p-4 p-md-5">
+
+                        <div class="text-center mb-4">
+                            <div class="trust-icon mx-auto mb-3">
+                                <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
+                            </div>
+
+                            <h2 class="card-title h3">
+                                လျှောက်ထားရန် အဆင့်များ
+                            </h2>
+                        </div>
+
+                        <div class="card-text text-secondary lh-lg fs-6">
+                            {% include 'include/fileClaims_text.html' %}
+                        </div>
+
+                        <!-- CTA BUTTON INSIDE CARD -->
+                        <div class="text-center pt-4 mt-4 border-top d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                            <a href="https://www.amilifeassurance.com/e-claims/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="btn btn-primary d-inline-flex align-items-center gap-2">
+                                <i class="fa-solid fa-file-signature" aria-hidden="true"></i>
+                                Submit Your Claims
+                            </a>
+
+                            <a href="{% url 'home' %}" class="btn btn-secondary d-inline-flex align-items-center gap-2">
+                                <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                                Back to Home
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
