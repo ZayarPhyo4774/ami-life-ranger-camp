@@ -56,7 +56,7 @@
 
     /* Typography */
     --font-body: "Inter", Arial, sans-serif;
-    --font-display: "Playfair Display", Georgia, serif;
+    --font-display: "Playfair Display", Arial, serif;
 
     /* Layout */
     --container-max: 1200px;
