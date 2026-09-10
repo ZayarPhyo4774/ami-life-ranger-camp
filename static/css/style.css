@@ -69,9 +69,7 @@
 }
 
 
-/* =========================================================
-   2. RESET / GLOBAL
-   ========================================================= */
+/* 2. RESET / GLOBAL */
 
 html {
     scroll-behavior: smooth;
@@ -247,7 +245,7 @@ h2 {
     position: absolute;
 
     top: 50%;
-    left: 50%;
+    left:50%;
 
     transform: translate(-50%, -50%);
 
@@ -267,20 +265,10 @@ h2 {
 
 .navbar-logo {
     display: block;
-
-    /*
-       Increased from 64px.
-       This is intentionally large for the AMI Life logo.
-    */
-
-    height: 100px;
-
+    height: 150px;
     width: auto;
-
-    max-width: 260px;
-
+    max-width: 300px;
     object-fit: contain;
-
     transition:
         transform var(--transition-normal),
         opacity var(--transition-normal);
@@ -1194,7 +1182,9 @@ button,
     }
 
     .navbar-logo {
-        height: 70px;
+        width: clamp(150px, 28vw, 220px);
+        height: auto;
+        max-width: none;
     }
 
     .nav-left,
@@ -1239,8 +1229,9 @@ button,
     }
 
     .navbar-logo {
-        height: 58px;
-        max-width: 180px;
+        width: clamp(120px, 40vw, 200px);
+        height: auto;
+        max-width: none;
     }
 
     .nav-left,
@@ -1339,8 +1330,9 @@ button,
     }
 
     .navbar-logo {
-        height: 52px;
-        max-width: 150px;
+        width: clamp(120px, 40vw, 200px);
+        height: auto;
+        max-width: none;
     }
 
     .btn-primary,
@@ -1434,7 +1426,7 @@ button,
 }
 
 .premium-navbar.navbar-scrolled .navbar-logo {
-    height: 66px;
+    height: 150px;
 }
 
 @media (max-width: 767px) {
@@ -1443,7 +1435,8 @@ button,
     }
 
     .premium-navbar.navbar-scrolled .navbar-logo {
-        height: 54px;
+        height: auto;
+        width: clamp(170px, 42vw, 240px);
     }
 }
 /* =========================================================
@@ -1457,12 +1450,12 @@ button,
 }
 
 .premium-carousel .carousel-item {
-    min-height: 580px;
+    min-height: 900px;
 }
 
 .hero-slide {
     position: relative;
-    min-height: 580px;
+    min-height: 900px;
     display: flex;
     align-items: center;
     background: var(--primary-dark);
@@ -1567,11 +1560,11 @@ button,
 @media (max-width: 767px) {
     .premium-carousel .carousel-item,
     .hero-slide {
-        min-height: 480px;
+        min-height: 600px;
     }
     
     .hero-slide-content {
-        padding: 80px 0 40px;
+        padding: 70px 0 40px;
     }
 
     .premium-carousel-control {
