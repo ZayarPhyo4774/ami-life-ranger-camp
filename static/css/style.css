@@ -25,8 +25,9 @@
     --soft: #898a8d;
 
     /* Accent */
-    --gold: #A82028;
-    --gold-light: #A82028;
+    --red: #A82028;
+    --gold: #f3c12e;
+    
 
     /* Surfaces */
     --surface: #ffffff;
@@ -622,7 +623,7 @@ h2 {
 .btn-card:hover i {
     transform: translateY(-3px);
 
-    color: var(--gold);
+    color: var(--red);
 }
 
 
@@ -660,7 +661,7 @@ h2 {
         linear-gradient(
             90deg,
             var(--primary),
-            var(--gold),
+            var(--red),
             var(--primary)
         );
 }
@@ -786,7 +787,7 @@ h2 {
 
     border-radius: 50%;
 
-    color: var(--gold);
+    color: var(--red);
 
     font-size: 0.95rem;
 }
@@ -1504,18 +1505,21 @@ button,
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     z-index: 1;
 }
 
 .hero-slide-overlay {
     position: absolute;
     inset: 0;
-    /* background: linear-gradient(
-        90deg,
-        rgba(31, 34, 36, 0.88) 0%,
-        rgba(31, 34, 36, 0.65) 50%,
-        rgba(31, 34, 36, 0.3) %
-    ); */
+    background:
+        linear-gradient(
+            90deg,
+            rgba(31, 34, 36, 0.82) 0%,
+            rgba(31, 34, 36, 0.58) 38%,
+            rgba(31, 34, 36, 0.18) 75%,
+            rgba(31, 34, 36, 0.05) 100%
+        );
     z-index: 2;
 }
 
@@ -1569,7 +1573,7 @@ button,
 }
 
 .hero-slide-button:hover {
-    background: var(--gold-light);
+    background: #fbd151;
     color: var(--primary-dark);
     transform: translateY(-2px);
 }
