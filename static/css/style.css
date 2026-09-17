@@ -396,7 +396,7 @@ h2 {
 
 
 .nav-website-link:hover {
-    color: var(--gold);
+    color: var(--red);
 
     transform: translateY(-1px);
 }
@@ -1512,14 +1512,14 @@ button,
 .hero-slide-overlay {
     position: absolute;
     inset: 0;
-    background:
+    /* background:
         linear-gradient(
             90deg,
             rgba(31, 34, 36, 0.82) 0%,
             rgba(31, 34, 36, 0.58) 38%,
             rgba(31, 34, 36, 0.18) 75%,
             rgba(31, 34, 36, 0.05) 100%
-        );
+        ); */
     z-index: 2;
 }
 
@@ -1532,7 +1532,7 @@ button,
 
 .hero-eyebrow {
     display: inline-block;
-    color: var(--gold);
+    color: var(--red);
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -1549,7 +1549,7 @@ button,
 }
 
 .hero-slide-title span {
-    color: var(--gold-light);
+    color: var(--red);
 }
 
 .hero-slide-description {
@@ -1564,7 +1564,7 @@ button,
     align-items: center;
     gap: 10px;
     padding: 12px 28px;
-    background: var(--gold);
+    background: var(--red);
     color: #ffffff;
     border-radius: var(--radius-pill);
     font-weight: 600;
@@ -1573,7 +1573,7 @@ button,
 }
 
 .hero-slide-button:hover {
-    background: #fbd151;
+    background: var(--red);
     color: var(--primary-dark);
     transform: translateY(-2px);
 }
