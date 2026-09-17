@@ -21,6 +21,7 @@
     --primary: #474a4c;
     --primary-dark: #292c2e;
     --primary-deep: #1f2224;
+    --primary-red: #A82028;
     --soft: #898a8d;
 
     /* Accent */
@@ -899,7 +900,7 @@ h2 {
 
     padding: 65px 0 25px;
 
-    background: var(--primary-dark);
+    background: var(--primary-red);
 
     color: #ffffff;
 }
