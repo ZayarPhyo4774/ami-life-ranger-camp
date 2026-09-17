@@ -9,7 +9,13 @@
 /* =========================================================
    1. DESIGN TOKENS
    ========================================================= */
-
+@font-face {
+  font-family: "Pyidaungsu";
+  src: url("/fonts/Pyidaungsu.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 :root {
     /* Brand */
     --primary: #474a4c;
@@ -18,8 +24,8 @@
     --soft: #898a8d;
 
     /* Accent */
-    --gold: #b99a5b;
-    --gold-light: #d8c28d;
+    --gold: #A82028;
+    --gold-light: #A82028;
 
     /* Surfaces */
     --surface: #ffffff;
@@ -55,8 +61,9 @@
     --shadow-premium: 0 24px 70px rgba(0, 0, 0, 0.11);
 
     /* Typography */
-    --font-body: "Inter", Arial, sans-serif;
-    --font-display: "Playfair Display", Arial, serif;
+    --font-body: "Inter","Pyidaungsu", Arial, sans-serif;
+    --font-display: "Playfair Display","Pyidaungsu", Arial, serif;
+    --font-mm: "Pyidaungsu", Arial, sans-serif;
 
     /* Layout */
     --container-max: 1200px;
@@ -1008,7 +1015,7 @@ h2 {
 
     margin: 42px 0 22px;
 
-    background: rgba(255, 255, 255, 0.10);
+    background: #A82028;
 }
 
 
@@ -1474,12 +1481,12 @@ button,
 .hero-slide-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
+    /* background: linear-gradient(
         90deg,
         rgba(31, 34, 36, 0.88) 0%,
         rgba(31, 34, 36, 0.65) 50%,
-        rgba(31, 34, 36, 0.3) 100%
-    );
+        rgba(31, 34, 36, 0.3) %
+    ); */
     z-index: 2;
 }
 
