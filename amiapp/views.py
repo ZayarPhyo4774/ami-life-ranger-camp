@@ -37,7 +37,7 @@ def get_quote(request):
             customer_message = form.cleaned_data['message'] or 'No message provided.'
             subject = f'New quote request from {full_name}'
             message = (
-                'A new quote request was submitted.\n\n'
+                'A new quote request was submitted from AMI Life x Ranger Camp Website.\n\n'
                 f'Name: {full_name}\n'
                 f'Email: {email}\n'
                 f'Phone: {phone_number}\n\n'
